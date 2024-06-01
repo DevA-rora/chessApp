@@ -29,16 +29,6 @@ export default function TabTwoScreen() {
       </ThemedText>
 
       
-      <Card link="https://google.com">
-        <ThemedText type="subtitle" style={styles.whiteText}> Something </ThemedText>
-        <ThemedText style={styles.whiteText}> Very cool very nice lol </ThemedText>
-      </Card> 
-
-      <Card>
-        <ThemedText type="subtitle" style={styles.whiteText}> Lessons </ThemedText>
-        <ThemedText style={styles.whiteText}> Learn the fundamentals of the game, how to win, what you should be doing.</ThemedText>
-      </Card>
-
 
 
 
