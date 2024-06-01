@@ -1,6 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StyleSheet, Image, Platform, Button } from "react-native";
-import Card from "@/components/card";
+import Card from "@/components/Card";
 
 import { Collapsible } from "@/components/Collapsible";
 import { ExternalLink } from "@/components/ExternalLink";
@@ -8,6 +8,9 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { Link } from "expo-router";
+import InternalLink from "@/components/InternalLink";
+
+// TODO: Link Lessons to another page that asks the user if they would like their lessons supplied from Chess.com or Lichess.org
 
 export default function TabTwoScreen() {
   return (
@@ -26,10 +29,10 @@ export default function TabTwoScreen() {
       </ThemedText>
 
       
-      <Card>
-        <ThemedText type="subtitle" style={styles.whiteText}> Learn The Pieces </ThemedText>
-        <ThemedText style={styles.whiteText}> Learn the names of the pieces and how they move on the chess board. </ThemedText>
-      </Card>
+      <Card link="https://google.com">
+        <ThemedText type="subtitle" style={styles.whiteText}> Something </ThemedText>
+        <ThemedText style={styles.whiteText}> Very cool very nice lol </ThemedText>
+      </Card> 
 
       <Card>
         <ThemedText type="subtitle" style={styles.whiteText}> Lessons </ThemedText>
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
   },
   // This WhiteText is for the text that is inside of the Card view. It turns the text to be the color white.
   whiteText: {
-    color: "#FFFFF"    
+    color: "#FFFFFF"    
   },
 
   ittyBittyPadding: {

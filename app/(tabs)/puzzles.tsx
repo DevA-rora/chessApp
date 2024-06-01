@@ -1,15 +1,15 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StyleSheet, Image, Platform } from "react-native";
-// import { Card, ListItem, Button, Icon } from "react-native";
 import { Collapsible } from "@/components/Collapsible";
 import { ExternalLink } from "@/components/ExternalLink";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
+import Card from "@/components/Card";
+import * as WebBrowser from "expo-web-browser";
 
 // TODO: Organise this file so that it actually makes sense
 // TODO: Find a way to implement the card components similar to the actual chess.com chess app
-
 
 // This is the top banner for the puzzle
 export default function TabTwoScreen() {
@@ -24,7 +24,6 @@ export default function TabTwoScreen() {
         />
       }
     >
-
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Puzzles</ThemedText>
       </ThemedView>
@@ -32,6 +31,12 @@ export default function TabTwoScreen() {
       <ThemedText>
         Chess puzzles to sharpen your tactical skills and strategic thinking.
       </ThemedText>
+
+      <Card link="https://lichess.org/training">
+        <ThemedText type="subtitle" style={styles.whiteText}> Puzzles </ThemedText>
+        <ThemedText style={styles.whiteText}> Train with over 500,000 puzzles. </ThemedText>
+      </Card> 
+
 
       <Collapsible title="File-based routing">
         <ThemedText>
@@ -49,7 +54,6 @@ export default function TabTwoScreen() {
           <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-
 
       <Collapsible title="Android, iOS, and web support">
         <ThemedText>
@@ -73,7 +77,6 @@ export default function TabTwoScreen() {
           <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
       </Collapsible>
-
 
       <Collapsible title="Custom fonts">
         <ThemedText>
@@ -99,7 +102,6 @@ export default function TabTwoScreen() {
         </ExternalLink>
       </Collapsible>
 
-      
       <Collapsible title="Animations">
         <ThemedText>
           This template includes an example of an animated component. The{" "}
@@ -139,4 +141,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 8,
   },
+  whiteText: {
+    color: "#FFFFFF",
+  }
 });

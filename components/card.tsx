@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Animated, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, View, Animated, TouchableWithoutFeedback, Linking } from "react-native";
+import HapticFeedback from "react-native-haptic-feedback";
 
-const Card = ({ children }) => {
+const Card = ({ children, link }) => {
   const [scaleValue] = useState(new Animated.Value(1));
 
   const handlePressIn = () => {
@@ -12,6 +13,7 @@ const Card = ({ children }) => {
   };
 
   const handlePressOut = () => {
+    HapticFeedback.trigger("impact")
     Animated.spring(scaleValue, {
       toValue: 1,
       friction: 3,
@@ -20,12 +22,18 @@ const Card = ({ children }) => {
     }).start();
   };
 
+  const handlePress = () => {
+    if (link) {
+      Linking.openURL(link);
+    }
+  };
+
   const animatedStyle = {
     transform: [{ scale: scaleValue }],
   };
 
   return (
-    <TouchableWithoutFeedback onPressIn={handlePressIn} onPressOut={handlePressOut}>
+    <TouchableWithoutFeedback onPressIn={handlePressIn} onPressOut={handlePressOut} onPress={handlePress}>
       <Animated.View style={[styles.card, animatedStyle]}>
         <View style={styles.cardContent}>
           {children}
