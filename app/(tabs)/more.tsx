@@ -7,6 +7,9 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 
+// TODO: Feature needed:
+// Clock app / local time control app: For local chess. It needs to be better than the chess.com clock app!!!
+
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
