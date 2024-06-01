@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Animated, TouchableWithoutFeedback, Linking } from "react-native";
-import HapticFeedback from "react-native-haptic-feedback";
+import { StyleSheet, View, Animated, TouchableWithoutFeedback, Linking, Platform } from "react-native";
+import * as Haptics from "expo-haptics";
 
 const Card = ({ children, link }) => {
   const [scaleValue] = useState(new Animated.Value(1));
@@ -13,7 +13,9 @@ const Card = ({ children, link }) => {
   };
 
   const handlePressOut = () => {
-    HapticFeedback.trigger("impact")
+    if (Platform.OS == "ios" || Platform.OS == "android") {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)
+    }
     Animated.spring(scaleValue, {
       toValue: 1,
       friction: 3,

@@ -8,7 +8,6 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { Link } from "expo-router";
-import InternalLink from "@/components/InternalLink";
 
 // TODO: Link Lessons to another page that asks the user if they would like their lessons supplied from Chess.com or Lichess.org
 
@@ -27,12 +26,6 @@ export default function TabTwoScreen() {
         Learn to play chess and get better at the game with lessons, and
         <ThemedText style={{ fontWeight: "bold" }}> Game Review </ThemedText>
       </ThemedText>
-
-      
-
-
-
-      
       
     </ParallaxScrollView>
   );
@@ -53,9 +46,5 @@ const styles = StyleSheet.create({
   // This WhiteText is for the text that is inside of the Card view. It turns the text to be the color white.
   whiteText: {
     color: "#FFFFFF"    
-  },
-
-  ittyBittyPadding: {
-    top: 5
   }
 });
