@@ -8,6 +8,7 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
+
 export default function HomeScreen() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
@@ -25,7 +26,7 @@ export default function HomeScreen() {
         </ThemedView>
         <ThemedText type="defaultSemiBold"> Warmup by playing some chess with yourself! </ThemedText>
         <View style={styles.chessboardContainer}>
-          <Chessboard style={styles.chessboard} />
+          {Platform.OS === 'web' ? <Chessboard boardSize={300} /> : <Chessboard />}
         </View>
         <ThemedView style={styles.stepContainer}>
           <ThemedText type="subtitle">Your Plan for Today:</ThemedText>
