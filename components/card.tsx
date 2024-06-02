@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Animated, TouchableWithoutFeedback, Linking, Platform } from "react-native";
+import { StyleSheet, View, Animated, TouchableWithoutFeedback, Linking, Platform, Image, Text } from "react-native";
 import * as Haptics from "expo-haptics";
 
-const Card = ({ children, link }) => {
+const Card = ({ children, link, image }) => {
   const [scaleValue] = useState(new Animated.Value(1));
 
   const handlePressIn = () => {
@@ -14,7 +14,7 @@ const Card = ({ children, link }) => {
 
   const handlePressOut = () => {
     if (Platform.OS == "ios" || Platform.OS == "android") {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
     }
     Animated.spring(scaleValue, {
       toValue: 1,
@@ -38,7 +38,10 @@ const Card = ({ children, link }) => {
     <TouchableWithoutFeedback onPressIn={handlePressIn} onPressOut={handlePressOut} onPress={handlePress}>
       <Animated.View style={[styles.card, animatedStyle]}>
         <View style={styles.cardContent}>
-          {children}
+          {image && <Image source={image} style={styles.cardImage} />}
+          <View style={styles.cardTextContent}>
+            {children}
+          </View>
         </View>
       </Animated.View>
     </TouchableWithoutFeedback>
@@ -58,8 +61,18 @@ const styles = StyleSheet.create({
     marginVertical: 6,
   },
   cardContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
     marginHorizontal: 18,
     marginVertical: 20,
+  },
+  cardImage: {
+    width: 50,
+    height: 50,
+    marginRight: 10,
+  },
+  cardTextContent: {
+    flex: 1,
   },
 });
 

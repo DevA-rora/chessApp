@@ -32,7 +32,7 @@ export default function TabTwoScreen() {
         Chess puzzles to sharpen your tactical skills and strategic thinking.
       </ThemedText>
 
-      <Card link="https://lichess.org/training">
+      <Card link="https://lichess.org/training" image={require("/Users/devarora/Code-Projects/Web-Apps/chessApp/chessApp/assets/images/adaptive-icon.png")}>
         <ThemedText type="subtitle" style={styles.whiteText}> Puzzles </ThemedText>
         <ThemedText style={styles.whiteText}> Train with over 500,000 puzzles. </ThemedText>
       </Card> 
