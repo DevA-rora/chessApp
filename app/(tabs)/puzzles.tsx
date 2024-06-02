@@ -34,98 +34,29 @@ export default function TabTwoScreen() {
 
       <Card link="https://lichess.org/training" image={require("/Users/devarora/Code-Projects/Web-Apps/chessApp/chessApp/assets/images/adaptive-icon.png")}>
         <ThemedText type="subtitle" style={styles.whiteText}> Puzzles </ThemedText>
-        <ThemedText style={styles.whiteText}> Train with over 500,000 puzzles. </ThemedText>
+        <ThemedText type="defaultSemiBold" style={styles.greyText}> Train with over 500,000 puzzles. </ThemedText>
       </Card> 
 
+      <Card link="https://www.chess.com/puzzles/rush" image={require("/Users/devarora/Code-Projects/Web-Apps/chessApp/chessApp/assets/images/adaptive-icon.png")}> 
+        <ThemedText type="subtitle" style={styles.whiteText}> Puzzle Rush </ThemedText>
+        <ThemedText type="defaultSemiBold" style={styles.greyText}> Race against the clock, 3 strikes and you're out! </ThemedText>
+      </Card>
 
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{" "}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{" "}
-          and{" "}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in{" "}
-          <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{" "}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
+      <Card link="https://www.chess.com/puzzles/battle" image={require("/Users/devarora/Code-Projects/Web-Apps/chessApp/chessApp/assets/images/adaptive-icon.png")}> 
+        <ThemedText type="subtitle" style={styles.whiteText}> Puzzle Battle </ThemedText>
+        <ThemedText type="defaultSemiBold" style={styles.greyText}> Rush against another player to win! </ThemedText>
+      </Card>
 
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the
-          web version, press <ThemedText type="defaultSemiBold">w</ThemedText>{" "}
-          in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the{" "}
-          <ThemedText type="defaultSemiBold">@2x</ThemedText> and{" "}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to
-          provide files for different screen densities
-        </ThemedText>
-        <Image
-          source={require("@/assets/images/react-logo.png")}
-          style={{ alignSelf: "center" }}
-        />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
+      <Card link="https://www.chess.com/daily-chess-puzzle" image={require("/Users/devarora/Code-Projects/Web-Apps/chessApp/chessApp/assets/images/adaptive-icon.png")}> 
+        <ThemedText type="subtitle" style={styles.whiteText}> Daily Puzzle </ThemedText>
+        <ThemedText type="defaultSemiBold" style={styles.greyText}> Puzzles get harder throughout the week </ThemedText>
+      </Card>
 
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText>{" "}
-          to see how to load{" "}
-          <ThemedText style={{ fontFamily: "SpaceMono" }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{" "}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook
-          lets you inspect what the user's current color scheme is, and so you
-          can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
+      <Card link="" image={require("/Users/devarora/Code-Projects/Web-Apps/chessApp/chessApp/assets/images/adaptive-icon.png")}> 
+        <ThemedText type="subtitle" style={styles.whiteText}> Custom Puzzles </ThemedText>
+        <ThemedText type="defaultSemiBold" style={styles.greyText}> Choose puzzles by theme and rating </ThemedText>
+      </Card>
 
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{" "}
-          <ThemedText type="defaultSemiBold">
-            components/HelloWave.tsx
-          </ThemedText>{" "}
-          component uses the powerful{" "}
-          <ThemedText type="defaultSemiBold">
-            react-native-reanimated
-          </ThemedText>{" "}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The{" "}
-              <ThemedText type="defaultSemiBold">
-                components/ParallaxScrollView.tsx
-              </ThemedText>{" "}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
     </ParallaxScrollView>
   );
 }
@@ -143,5 +74,8 @@ const styles = StyleSheet.create({
   },
   whiteText: {
     color: "#FFFFFF",
-  }
+  },
+  greyText: {
+    color: "#a19d9d",
+  },
 });
